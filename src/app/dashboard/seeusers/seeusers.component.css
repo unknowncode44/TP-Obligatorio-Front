@@ -1,0 +1,88 @@
+/* contenedor general */
+
+.su-wrapper {
+    display: flex;
+    flex-direction: column;
+    background: var(--primary);
+    justify-content: space-between;
+    min-width: 1024px;
+    max-width: 1024px;
+    min-height: 100%;
+    max-height: 100px;
+    padding: 10px 20px 20px 20px;
+    border-radius: 0px 15px 15px 0px;
+}
+
+
+/* titulo */
+
+.su-wrapper .title {
+    display: flex;
+    min-height: 80px;
+    padding-left: 20px;
+    align-items: center;
+}
+
+.su-wrapper .title h1 {
+    font-weight: 300;
+    font-size: 44px;
+    color: var(--white);
+}
+
+.su-wrapper .su-cards {
+    min-width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+.su-wrapper .su-cards .su-card {
+    width: 25%;
+    min-height: 99%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+    background: var(--white);
+    border-radius: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.su-wrapper .su-cards .su-card .su-card-text {
+    padding: 0.35em 0px;
+}
+
+.su-wrapper .su-cards .su-card .su-card-text p {
+    font-size: 18px;
+}
+
+.su-wrapper .su-cards .su-card .su-card-number {
+    padding: 0.15em 0px 1em 0px;
+}
+
+.su-wrapper .su-cards .su-card .su-card-number h1 {
+    font-weight: 500;
+    font-size: 44px;
+}
+
+.su-wrapper .su-table-wrapper {
+    width: 100%;
+    height: 540px;
+    background: var(--white);
+    border-radius: 15px;
+    background: var(--white);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.su-wrapper .su-table-wrapper .su-table-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 60px;
+    width: 100%;
+    background: var(--primary);
+}

@@ -6,6 +6,8 @@
     min-width: 100%;
     min-height: 100%;
     padding: 10px;
+    border-radius: 15px 0px 0px 15px;
+    background: rgba(0, 0, 0, 0.10);
 }
 
 .au-wrapper .title {
@@ -24,7 +26,7 @@
     margin-top: 5px;
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
+    padding: 0px 20px;
 }
 
 .au-wrapper .field form label {
@@ -46,7 +48,7 @@
 }
 
 .au-wrapper .field .checks {
-    padding: 0px 0em;
+    padding: 0px 1em;
     margin-top: 5px;
     display: flex;
     flex-direction: row;
@@ -103,6 +105,9 @@
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+
+/* cuando el boton esta checked */
+
 .au-wrapper .field .checks .check input.apple-switch:checked {
     border-color: var(--primary);
     box-shadow: inset 20px 0 0 0 var(--primary);
@@ -113,8 +118,11 @@
     box-shadow: -2px 4px 3px rgba(0, 0, 0, 0.05);
 }
 
+
+/* botones del formulario */
+
 .au-wrapper .field .au-btns {
-    padding: 0px 0em;
+    padding: 0px 0.5em;
     margin-top: 5px;
     display: flex;
     flex-direction: row;
@@ -131,10 +139,16 @@
     width: 150px;
 }
 
+
+/* boton cancelar */
+
 .au-wrapper .field .au-btns input:nth-child(3) {
     color: red;
     background-color: var(--white);
 }
+
+
+/* efecto hover */
 
 .au-wrapper .field .au-btns input:hover {
     color: var(--primary);

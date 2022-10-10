@@ -13,6 +13,7 @@ import { reducers, metaReducers } from './reducers';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
 import { AdduserComponent } from './dashboard/adduser/adduser.component';
+import { SeeusersComponent } from './dashboard/seeusers/seeusers.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdduserComponent } from './dashboard/adduser/adduser.component';
     RegisterComponent,
     DashboardComponent,
     SidebarComponent,
-    AdduserComponent
+    AdduserComponent,
+    SeeusersComponent
   ],
   imports: [
     ReactiveFormsModule,
