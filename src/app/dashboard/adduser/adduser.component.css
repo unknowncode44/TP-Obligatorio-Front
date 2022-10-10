@@ -1,0 +1,71 @@
+/* contenedor general */
+
+.au-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    min-height: 100%;
+    padding: 10px;
+}
+
+.au-wrapper .title {
+    display: flex;
+    min-height: 80px;
+    padding-left: 20px;
+    align-items: center;
+}
+
+.au-wrapper .title h1 {
+    font-weight: 300;
+    font-size: 44px;
+}
+
+.au-wrapper .field form {
+    margin-top: 5px;
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.au-wrapper .field form label {
+    font-size: 20px;
+    font-weight: 200;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.au-wrapper .field form input,
+.au-wrapper .field form select {
+    padding: 4px 15px;
+    margin-top: 2px;
+    font-size: 32px;
+    font-weight: 300;
+    border-radius: 15px;
+    border-style: none;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.au-wrapper .field .checks {
+    padding: 0px 0em;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    min-height: 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.au-wrapper .field .checks .check {
+    width: 20%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.au-wrapper .field .checks label {
+    font-size: 18px;
+    font-weight: 200;
+}

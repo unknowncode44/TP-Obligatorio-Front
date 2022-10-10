@@ -1,0 +1,40 @@
+<div class="navigation">
+    <ul>
+
+        <a href="#">
+            <span class="brand-icon"><img src="../../../assets/logos/hvdevslogo.svg" alt=""></span>
+            <h3 class="brand-name"><strong>HV Devs </strong>Transactions</h3>
+        </a>
+
+        <li [ngClass]="createUserActive ? 'active' : ''">
+            <a href="#" (click)="setActive('createUser')">
+                <span class="icon2"><i class="ion ion-md-person-add"></i></span>
+                <span class="title">Crear Usuario</span>
+            </a>
+        </li>
+        <li [ngClass]="seeUserActive ? 'active' : ''">
+            <a href="#" (click)="setActive('seeUsers')">
+                <span class="icon ion ion-md-people"></span>
+                <span class="title">Ver usuarios</span>
+            </a>
+        </li>
+        <li [ngClass]="fundsActive ? 'active' : ''">
+            <a href="#" (click)="setActive('seeFunds')">
+                <span class="icon ion ion-md-cash"></span>
+                <span class="title">Fondos</span>
+            </a>
+        </li>
+        <li [ngClass]="settingsActive ? 'active' : ''">
+            <a href="#" (click)="setActive('settings')">
+                <span class="icon ion ion-md-settings"></span>
+                <span class="title">Configuracion</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="icon ion ion-md-log-out"></span>
+                <span class="title">Log Out</span>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,25 @@
+<div class="flex-container">
+    <div class="flex-items header">
+        <h1>Ingresar Producto</h1>
+    </div>
+    <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+        <div class="flex-items">
+            <input type="number" id="id_producto" name="id_producto" formControlName="id_producto">
+        </div>
+        <div class="flex-items">
+            <input name="nombre" type="text" placeholder="Ingresa Nombre" formControlName="nombre">
+        </div>
+        <div class="flex-items">
+            <input name="costo" type="number" placeholder="Ingresa Costo" formControlName="costo">
+        </div>
+        <div class="flex-items">
+            <input name="precio" type="number" placeholder="Ingresa Precio" formControlName="precio">
+        </div>
+        <div class="flex-items">
+            <input name="cantidad" type="number" placeholder="Ingresa Cantidad" formControlName="cantidad">
+        </div>
+        <div class="flex-items">
+            <button>Agregar</button>
+        </div>
+    </form>
+</div>

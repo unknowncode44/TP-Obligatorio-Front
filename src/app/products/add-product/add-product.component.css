@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
+.flex-container {
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: normal;
+    align-content: normal;
+}
+
+.flex-items:nth-child(1) {
+    align-self: center;
+    display: block;
+    border-bottom: 1 px solid black;
+}
+
+.flex-items:nth-child(2) {
+    display: block;
+    align-self: center;
+}
+
+.flex-items input {
+    font-family: 'Rubik', sans-serif;
+    color: black;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    margin-top: 3px;
+}
+
+.flex-items button {
+    font-family: 'Rubik', sans-serif;
+    background-color: blue;
+    color: white;
+    width: 240px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.flex-items:nth-child(3) {
+    display: block;
+    align-self: center;
+}
+
+.flex-items:nth-child(4) {
+    display: block;
+    align-self: center;
+}
+
+.flex-items:nth-child(5) {
+    display: block;
+    align-self: center;
+}
+
+.flex-items:nth-child(6) {
+    display: block;
+    align-self: center;
+}
+
+.flex-items:nth-child(7) {
+    display: block;
+    align-self: center;
+}

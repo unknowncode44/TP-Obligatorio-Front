@@ -1,0 +1,28 @@
+<div class="dash-container">
+    <app-sidebar></app-sidebar>
+    <div class="content-wrapper">
+
+        <!-- barra de notificaciones -->
+        <div class="topbar">
+            <!-- bienvenida + nombre de usuario -->
+            <div class="tb-title">
+                <p><span>Hola </span>{{username}}</p>
+            </div>
+            <!-- boton notificacion -->
+            <div class="tb-notifications">
+                <i class="ion ion-md-notifications"></i>
+            </div>
+            <!-- boton mi cuenta -->
+            <div class="tb-my-account">
+                <i class="ion ion-md-contact"></i>
+            </div>
+        </div>
+
+        <!-- envonltura de los subcomponentes -->
+        <div class="component-wrapper">
+            <!-- insertar subcomponentes aca -->
+            <app-adduser></app-adduser>
+        </div>
+
+    </div>
+</div>
