@@ -8,7 +8,7 @@
                 <p>Usuarios Totales</p>
             </div>
             <div class="su-card-number">
-                <h1>8</h1>
+                <h1>{{ totalUsers }}</h1>
             </div>
         </div>
         <div class="su-card">
@@ -16,7 +16,7 @@
                 <p>Administradores</p>
             </div>
             <div class="su-card-number">
-                <h1>4</h1>
+                <h1>{{totalAdmins}}</h1>
             </div>
         </div>
         <div class="su-card">
@@ -24,13 +24,50 @@
                 <p>Usuarios</p>
             </div>
             <div class="su-card-number">
-                <h1>4</h1>
+                <h1>{{totalCommonUsers}}</h1>
             </div>
         </div>
     </div>
     <div class="su-table-wrapper">
         <div class="su-table-header">
-
+            <div class="showQty">
+                <p>Mostrar </p>
+                <select id="">
+                    <option value="10">5</option>
+                    <option value="10">10</option>
+               </select>
+                <p>Usuarios</p>
+            </div>
+            <div class="separator"></div>
+            <div class="th-search">
+                <i class="ion ion-md-search"></i>
+                <input type="text" placeholder="Buscar Usuario">
+            </div>
         </div>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Usuario</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Mail</th>
+                <th>Grupo</th>
+                <th>Permisos</th>
+                <th>Acciones</th>
+            </tr>
+            <tr *ngFor="let user of usersArr">
+                <td> {{ user.user_id }} </td>
+                <td> {{ user.username }} </td>
+                <td> {{ user.first_name }} </td>
+                <td> {{ user.last_name }} </td>
+                <td> {{ user.email }} </td>
+                <td> {{ user.gro_ups }} </td>
+                <td> {{ user.user_permission }} </td>
+                <td class="tb-actions">
+                    <button class="edit"><i class="ion ion-md-create"></i></button>
+                    <button class="delete"><i class="ion ion-md-trash"></i></button>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
