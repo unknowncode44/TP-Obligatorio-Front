@@ -22,7 +22,6 @@
 
 .au-wrapper .field form {
     margin-top: 5px;
-    max-width: 30%;
     display: flex;
     flex-direction: column;
     padding-left: 20px;
@@ -41,7 +40,7 @@
     margin-top: 2px;
     font-size: 32px;
     font-weight: 300;
-    border-radius: 15px;
+    border-radius: 10px;
     border-style: none;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
 }
@@ -56,6 +55,9 @@
     align-items: center;
 }
 
+
+/* check boxes */
+
 .au-wrapper .field .checks .check {
     width: 20%;
     min-height: 100%;
@@ -68,4 +70,80 @@
 .au-wrapper .field .checks label {
     font-size: 18px;
     font-weight: 200;
+}
+
+
+/* estilo de iOS para los check */
+
+.au-wrapper .field .checks .check input.apple-switch {
+    position: relative;
+    appearance: none;
+    outline: none;
+    width: 50px;
+    height: 30px;
+    background-color: var(--white);
+    border: 1px solid #D9DADC;
+    border-radius: 50px;
+    box-shadow: inset -20px 0 0 0 var(--white);
+    transition-duration: 200ms;
+}
+
+
+/* el sombreado del knob */
+
+.au-wrapper .field .checks .check input.apple-switch:after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 26px;
+    height: 26px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.au-wrapper .field .checks .check input.apple-switch:checked {
+    border-color: var(--primary);
+    box-shadow: inset 20px 0 0 0 var(--primary);
+}
+
+.au-wrapper .field .checks .check input.apple-switch:checked:after {
+    left: 20px;
+    box-shadow: -2px 4px 3px rgba(0, 0, 0, 0.05);
+}
+
+.au-wrapper .field .au-btns {
+    padding: 0px 0em;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    min-height: 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.au-wrapper .field .au-btns input {
+    font-size: 20px;
+    color: var(--white);
+    background: var(--primary);
+    padding: 0.7em 2px;
+    width: 150px;
+}
+
+.au-wrapper .field .au-btns input:nth-child(3) {
+    color: red;
+    background-color: var(--white);
+}
+
+.au-wrapper .field .au-btns input:hover {
+    color: var(--primary);
+    background: var(--white);
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.au-wrapper .field .au-btns input:nth-child(3):hover {
+    color: var(--white);
+    background-color: red;
 }

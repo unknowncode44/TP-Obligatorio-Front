@@ -71,7 +71,8 @@
 .content-wrapper .component-wrapper {
     margin-top: 5px;
     margin-right: 3px;
-    display: block;
+    display: flex;
+    flex-direction: row;
     min-height: calc(100% - 80px);
     background: rgba(0, 0, 0, 0.10);
     padding: 10px;
