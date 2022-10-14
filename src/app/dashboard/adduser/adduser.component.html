@@ -15,21 +15,25 @@
             <label for="i-password">Contraseña</label>
             <input id="i-password" type="password">
             <label for="i-group">Grupo</label>
-            <select name="" id="i-group"></select>
+            <select name="" id="i-group">
+                <option *ngFor="let group of groups" value="group">{{group}}</option>
+            </select>
             <label for="i-permissions">Permisos</label>
-            <select name="" id="i-permissions"></select>
+            <select name="" id="i-permissions">
+                <option *ngFor="let permission of permissions" value="permission">{{permission}}</option>
+            </select>
             <div class="checks">
                 <div class="check">
                     <label for="">Staff</label>
-                    <input class="apple-switch" type="checkbox" checked>
+                    <input class="apple-switch" type="checkbox" checked (change)="changeStaff()">
                 </div>
                 <div class="check">
                     <label for="">Activo</label>
-                    <input class="apple-switch" type="checkbox">
+                    <input class="apple-switch" type="checkbox" (change)="changeActiveUser()">
                 </div>
                 <div class="check">
                     <label for="">SUser</label>
-                    <input class="apple-switch" type="checkbox">
+                    <input class="apple-switch" type="checkbox" (change)="changeSuperUser()">
                 </div>
 
 

@@ -36,13 +36,7 @@ export class SeeusersComponent implements OnInit {
       })
   }
 
-  ngOnInit(): void {
-
-
-
-
-
-  }
+  ngOnInit(): void {}
 
   deleteUser(userID: string ){
     this.userService.deleteUser(userID).subscribe(() => {
@@ -53,7 +47,7 @@ export class SeeusersComponent implements OnInit {
     
   }
 
-
+  
 
   getAdmins(): User[] {
     const _usrArr = this.usersArr
