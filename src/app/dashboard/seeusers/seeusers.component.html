@@ -57,7 +57,8 @@
             </tr>
             <tr *ngFor="let user of usersArr">
                 <td> {{ user.user_id }} </td>
-                <td> {{ user.username }} </td>
+                <td><input type="text" value=" {{ user.username }}" disabled></td>
+
                 <td> {{ user.first_name }} </td>
                 <td> {{ user.last_name }} </td>
                 <td> {{ user.email }} </td>
@@ -65,7 +66,7 @@
                 <td> {{ user.user_permission }} </td>
                 <td class="tb-actions">
                     <button class="edit"><i class="ion ion-md-create"></i></button>
-                    <button class="delete"><i class="ion ion-md-trash"></i></button>
+                    <button class="delete" (click)="deleteUser(user.user_id.toString())"><i class="ion ion-md-trash"></i></button>
                 </td>
             </tr>
         </table>

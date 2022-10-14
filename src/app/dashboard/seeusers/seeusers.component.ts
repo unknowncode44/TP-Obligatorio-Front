@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ServicesService } from 'src/app/auth/services/services.service';
 import { users_array_mock } from '../mocked_data/users.mock';
 import { User } from '../models/user.model';
 
@@ -13,28 +15,52 @@ export class SeeusersComponent implements OnInit {
   TODO: 
   aca debemos reemplazar el array_mock por el que obtendremos
   de la base de datos, esto se debe de ejecutar el en el inicio
-  */ 
-  usersArr: User[] = users_array_mock;
+  */
+  usersArr: User[] = [];
   totalUsers: string = ''; // usuarios totales
   totalCommonUsers: string = ''; // usuarios comunes
   totalAdmins: string = '';  // usuarios administradores
 
-  constructor() {
-    this.totalUsers = this.usersArr.length.toString();
-    this.totalAdmins = this.getAdmins().length.toString();
-    this.totalCommonUsers = (this.usersArr.length - this.getAdmins().length).toString();
+  arrayUsrs: User[] = []
 
+  constructor(private userService: ServicesService, private router: Router) {
+    this.userService.getUsers().then(
+      p => {
+        p.subscribe((res) => {
+          this.usersArr = res.result
+          this.totalUsers = this.usersArr.length.toString();
+          this.totalAdmins = this.getAdmins().length.toString();
+          this.totalCommonUsers = (this.usersArr.length - this.getAdmins().length).toString();
+        }
+        )
+      })
   }
 
   ngOnInit(): void {
+
+
+
+
+
   }
+
+  deleteUser(userID: string ){
+    this.userService.deleteUser(userID).subscribe(() => {
+      this.usersArr = this.usersArr.filter( 
+        (u: User) => u.user_id.toString() !== userID
+        )
+    })
+    
+  }
+
+
 
   getAdmins(): User[] {
     const _usrArr = this.usersArr
     let admArray: User[] = []
     for (let i = 0; i < _usrArr.length; i++) {
       const e = _usrArr[i];
-      if(e.user_permission = 'all'){
+      if (e.user_permission = 'all') {
         admArray.push(e)
       }
     }
