@@ -41,7 +41,7 @@
     min-height: 99%;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
     background: var(--white);
     border-radius: 15px;
     justify-content: space-between;
@@ -76,7 +76,7 @@
     background: var(--white);
     border-radius: 15px;
     background: var(--white);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
     padding: 10px 8px;
     display: flex;
     flex-direction: column;
@@ -118,6 +118,14 @@
 
 .su-wrapper .su-table-wrapper .su-table-header .separator {
     width: 50%;
+    padding: 2px;
+}
+
+.su-wrapper .su-table-wrapper .su-table-header .separator mat-progress-spinner {
+    position: absolute;
+    z-index: 1000;
+    height: 10px;
+    transform: scale(0.3) translateY(-75px);
 }
 
 .su-wrapper .su-table-wrapper .su-table-header .th-search {

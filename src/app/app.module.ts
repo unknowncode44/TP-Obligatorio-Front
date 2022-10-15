@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
 import { AdduserComponent } from './dashboard/adduser/adduser.component';
 import { SeeusersComponent } from './dashboard/seeusers/seeusers.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+import { NetworkInterceptor } from './dashboard/helpers/network.interceptor';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { SeeusersComponent } from './dashboard/seeusers/seeusers.component';
     DashboardComponent,
     SidebarComponent,
     AdduserComponent,
-    SeeusersComponent
+    SeeusersComponent,
+    
   ],
   imports: [
     ReactiveFormsModule,
@@ -34,9 +38,15 @@ import { SeeusersComponent } from './dashboard/seeusers/seeusers.component';
     HttpClientModule,
     StoreModule.forRoot(reducers, {
       metaReducers
-    })
+    }),
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: NetworkInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,9 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 :root {
     --primary: #38bffd;
-    --white: #fff;
+    --white: rgb(232, 232, 232);
     --black: #333;
     --secondary: #3b83bd;
+}
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: var(--white) !important;
 }
 
 * {
@@ -156,4 +161,14 @@
         left: 0;
         top: 150px;
     }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }

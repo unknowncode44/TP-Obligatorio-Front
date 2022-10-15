@@ -3,24 +3,24 @@
         <h1>Crear Usuario</h1>
     </div>
     <div class="field">
-        <form action="submit">
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
             <label for="i-username">Nombre de usuario</label>
-            <input id="i-username" type="text">
+            <input id="i-username" type="text" formControlName="username">
             <label for="i-name">Nombre</label>
-            <input id="i-name" type="text">
+            <input id="i-name" type="text" formControlName="first_name">
             <label for="i-lastname">Apellido</label>
-            <input id="i-lastname" type="text">
+            <input id="i-lastname" type="text" formControlName="last_name">
             <label for="i-email">Email</label>
-            <input id="i-email" type="email">
+            <input id="i-email" type="email" formControlName="email">
             <label for="i-password">Contraseña</label>
-            <input id="i-password" type="password">
+            <input id="i-password" type="password" formControlName="pass">
             <label for="i-group">Grupo</label>
-            <select name="" id="i-group">
-                <option *ngFor="let group of groups" value="group">{{group}}</option>
+            <select name="" id="i-group" formControlName="gro_ups">
+                <option *ngFor="let group of groups" value="group" >{{group}}</option>
             </select>
             <label for="i-permissions">Permisos</label>
-            <select name="" id="i-permissions">
-                <option *ngFor="let permission of permissions" value="permission">{{permission}}</option>
+            <select name="" id="i-permissions" formControlName="user_permission">
+                <option *ngFor="let permission of permissions" value="permission" >{{permission}}</option>
             </select>
             <div class="checks">
                 <div class="check">
@@ -39,7 +39,7 @@
 
             </div>
             <div class="au-btns">
-                <input type="button" value="Agregar">
+                <input type="submit" value="Agregar">
                 <input type="button" value="Agregar otro">
                 <input type="button" value="Cancelar">
             </div>

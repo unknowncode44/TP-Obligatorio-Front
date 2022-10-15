@@ -28,7 +28,9 @@
             </div>
         </div>
     </div>
+
     <div class="su-table-wrapper">
+
         <div class="su-table-header">
             <div class="showQty">
                 <p>Mostrar </p>
@@ -38,7 +40,9 @@
                </select>
                 <p>Usuarios</p>
             </div>
-            <div class="separator"></div>
+            <div class="separator">
+                <mat-progress-spinner [mode]="'indeterminate'" *ngIf="loading$ |async"></mat-progress-spinner>
+            </div>
             <div class="th-search">
                 <i class="ion ion-md-search"></i>
                 <input type="text" placeholder="Buscar Usuario">
@@ -64,8 +68,8 @@
                 <td> {{ user.gro_ups }} </td>
                 <td> {{ user.user_permission }} </td>
                 <td class="tb-actions">
-                    <button class="edit"><i class="ion ion-md-create"></i></button>
-                    <button class="delete" (click)="deleteUser(user.user_id.toString())"><i class="ion ion-md-trash"></i></button>
+                    <button class="edit" (click)="userService.show()"><i class="ion ion-md-create"></i></button>
+                    <button class="delete" (click)="deleteUser(user.user_id!.toString())"><i class="ion ion-md-trash"></i></button>
                 </td>
             </tr>
         </table>
