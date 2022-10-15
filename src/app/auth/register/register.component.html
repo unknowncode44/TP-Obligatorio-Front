@@ -1,7 +1,7 @@
 <form>
     <h3>Registrarse</h3>
-    <input type="text" placeholder="mail@mail.com">
-    <input type="password" placeholder="Password">
-    <input type="password" placeholder="Confirmar Password">
-    <input type="submit" value="Registrarse">
+    <input type="text" [(ngModel)]="username" placeholder="mail@mail.com" class="form-control">
+    <input type="password" [(ngModel)]="password" placeholder="Password" class="form-control">
+    <input type="password" [(ngModel)]="confirmPassword" placeholder="Confirmar Password" class="form-control">
+    <input type="submit" (click)="addUser()" placeholder="Registrarse" routerLink="/dashboard ">
 </form>
