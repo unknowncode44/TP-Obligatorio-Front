@@ -1,7 +1,7 @@
 <form>
     <h3>Ingresar</h3>
-    <input type="text" placeholder="mail@mail.com">
-    <input type="password" placeholder="Password">
-    <input type="submit" value="Ingresar">
+    <input type="text" [(ngModel)]="username" placeholder="mail@mail.com" class="form-control">
+    <input type="password" [(ngModel)]="password" placeholder="Password" class="form-control">
+    <input type="submit" value="Ingresar" (click)="login()" class="form-control">
     <a href="#" class="forgot">Olvide Mi Contraseña</a>
 </form>

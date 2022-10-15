@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,7 +14,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
 import { AdduserComponent } from './dashboard/adduser/adduser.component';
 import { SeeusersComponent } from './dashboard/seeusers/seeusers.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,10 +25,12 @@ import { SeeusersComponent } from './dashboard/seeusers/seeusers.component';
     AdduserComponent,
     SeeusersComponent
   ],
+  
   imports: [
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     StoreModule.forRoot({}, {}),
     HttpClientModule,
     StoreModule.forRoot(reducers, {
