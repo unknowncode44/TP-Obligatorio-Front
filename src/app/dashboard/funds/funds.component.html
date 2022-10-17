@@ -1,0 +1,80 @@
+<div class="funds-wrapper">
+    <div class="see-funds-wrapper">
+        <div class="title">
+            <h1>Mis fondos</h1>
+        </div>
+        <div class="see-funds">
+            <div class="funds-income">
+                <h4>Disponible</h4>
+                <div class="money">
+                    <h2>$</h2>
+                    <h2 class="amount">100.00</h2>
+                </div>
+            </div>
+            <div class="separator"></div>
+        </div>
+        <div class="subtitle">
+            <h2>Ingreso / Egreso de Fondos</h2>
+        </div>
+        <div class="form-tab">
+            <div class="field">
+                <form [formGroup]="transactionForm">
+                    <label for="source">Desde Cuenta</label>
+                    <input name="source" type="number" formControlName="source_">
+                    <label for="destiny">A Cuenta</label>
+                    <input name="destiny" type="numner" formControlName="destiny">
+                    <label for="amount">Monto</label>
+                    <input name="amount" type="number" formControlName="quantity">
+                    <input type="submit" class="btn" value="Transferir">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="see-transactions-wrapper">
+        <div class="title">
+            <h1>Mis Transacciones</h1>
+        </div>
+        <div class="su-table-wrapper">
+
+            <div class="su-table-header">
+                <div class="showQty">
+                    <p>Mostrar </p>
+                    <select id="">
+                        <option value="10">5</option>
+                        <option value="10">10</option>
+                   </select>
+                    <p>Transacciones</p>
+                </div>
+                <div class="separator">
+                    <mat-progress-spinner [mode]="'indeterminate'" *ngIf="loading$ | async"></mat-progress-spinner>
+                </div>
+
+            </div>
+            <table>
+                <tr>
+                    <th>Fecha</th>
+                    <th>ID Transaccion</th>
+                    <th>Origen</th>
+                    <th>Destino</th>
+                    <th>Monto</th>
+                    <th>Status</th>
+                    <th>Acciones</th>
+
+                </tr>
+                <tr>
+                    <td> 17/11/2022 </td>
+                    <td> 001 </td>
+                    <td> Usuario </td>
+                    <td> Usuario2 </td>
+                    <td> 300.00 </td>
+                    <td> Aprobada </td>
+                    <td class="tb-actions">
+                        <button class="edit"><i class="ion ion-md-create"></i></button>
+                        <button class="delete"><i class="ion ion-md-trash"></i></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

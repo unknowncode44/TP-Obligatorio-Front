@@ -16,7 +16,7 @@ const validateToken = (req: Request, res: Response, next: NextFunction) => {
     try {
         const bearerToken = headerToken.slice(7); 
 
-        jwt.verify(bearerToken, process.env.SECRET_KET);
+        // jwt.verify(bearerToken, process.env.SECRET_KET);
 
         next()
     } catch (error){

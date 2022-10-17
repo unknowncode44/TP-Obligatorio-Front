@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../models/user.model';
 
@@ -15,9 +15,13 @@ export class UserService {
   // si tenemos varias Apis, en este caso almacena api/users
   private myApiUrl: string;
 
+  private _logged = new BehaviorSubject<boolean>(false);
+
+  public readonly logged$ = this._logged.asObservable()
+
   constructor(private http: HttpClient) { 
     this.myAppUrl = environment.endpoint;
-    this.myApiUrl = 'api/users'
+    this.myApiUrl = 'api/auth'
   }
 
   //metodo que va a recibir un user, que va a ser de la interfaz user que creamos
@@ -31,8 +35,16 @@ export class UserService {
 
   // creamos metodo login recibe un usuario y devuelve un observable con el token que recibe del usuario registrado
 
-  login(user:User):Observable<string> {
-    return this.http.post<string>(`${this.myAppUrl}${this.myApiUrl}/login`, user)
+  async login(user:User): Promise<Observable<string>> {
+    const result = await this.http.post<string>(`${this.myAppUrl}${this.myApiUrl}/login`, user)
+    return result
   }
+
+
+  //logged variable
+  loginSuccess() {
+    this._logged.next(true)
+  }
+
 
 }

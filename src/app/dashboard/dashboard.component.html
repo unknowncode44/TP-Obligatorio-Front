@@ -19,7 +19,12 @@
         </div>
 
         <!-- envonltura de los subcomponentes -->
-        <div class="component-wrapper">
+        <div class="component-wrapper" *ngIf="funds | async">
+            <!-- insertar subcomponentes aca -->
+            <app-funds></app-funds>
+        </div>
+
+        <div class="component-wrapper" *ngIf="users | async">
             <!-- insertar subcomponentes aca -->
             <app-adduser></app-adduser>
             <app-seeusers></app-seeusers>

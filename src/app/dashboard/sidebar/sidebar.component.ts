@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService } from './service/sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,33 +14,13 @@ export class SidebarComponent implements OnInit {
   settingsActive    : boolean = false;
   
 
-  constructor() { }
+  constructor(private sbService: SidebarService) { }
 
   ngOnInit(): void {
   }
 
   setActive(section:string){
-
-    this.createUserActive = false;
-    this.seeUserActive    = false;
-    this.fundsActive      = false;
-    this.settingsActive   = false;
-
-    switch (section) {
-      case 'createUser':
-        this.createUserActive = !this.createUserActive
-        break;
-      case 'seeUsers':
-        this.seeUserActive = !this.seeUserActive
-        break;
-      case 'seeFunds':
-        this.fundsActive = !this.fundsActive
-        break;
-      case 'settings':
-        this.settingsActive = !this.settingsActive
-        break;
-
-    }
+    this.sbService.setActive(section)
   }
 
 }

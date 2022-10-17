@@ -1,0 +1,27 @@
+<div class="wrapper" [ngClass]="isActive ? 'active' : 'inactive'" *ngIf="logged$">
+    <div class="container">
+        <div class="blueBg">
+            <div class="box signin">
+                <h2>Ya tienes una cuenta?</h2>
+                <button class="signinBtn" (click)="showRegisterLogin()">Ingresar</button>
+            </div>
+            <div class="box signup">
+                <h2>Aun no tienes una cuenta?</h2>
+                <button class="signupBtn">Registrate</button>
+
+
+                <!-- <button class="signupBtn" (click)="showRegisterLogin()">Registrate</button> -->
+
+
+            </div>
+        </div>
+        <div class="formBx" [ngClass]="isActive ? 'active' : 'inactive'">
+            <div class="form signinForm">
+                <app-login></app-login>
+            </div>
+            <div class="form signupForm">
+                <app-register></app-register>
+            </div>
+        </div>
+    </div>
+</div>

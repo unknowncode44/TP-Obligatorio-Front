@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService } from './sidebar/service/sidebar.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +13,12 @@ export class DashboardComponent implements OnInit {
   deberia cargarse en incio
   */ 
   username: string = 'Roberto' 
-  constructor() { }
+
+  
+  users = this.sbService.createUserActive
+  funds = this.sbService.fundsActive
+
+  constructor(private sbService: SidebarService) { }
 
   ngOnInit(): void {
   }

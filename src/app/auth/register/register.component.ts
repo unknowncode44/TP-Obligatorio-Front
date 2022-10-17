@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
 
     const user: User = {
       username: this.username,
-      password: this.password
+      pass: this.password
     }
 
     this._userService.signIn(user).subscribe(data => {
