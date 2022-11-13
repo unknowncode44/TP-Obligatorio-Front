@@ -1,14 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { User } from '../models/user.model';
+import { Component, OnInit }      from '@angular/core';
+
+// implementamos angular forms
+import { FormGroup, FormControl } from '@angular/forms'; 
+
+// Servicio de usuario
+import { AuthService }            from 'src/app/auth/services/auth.service';
+import { UserEventsService }      from 'src/app/common_services/user-events.service';
+
+// modelo de usuario
+import { User }                   from '../models/user.model';
+
+// toast 
+import {MessageService} from 'primeng/api';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-adduser',
   templateUrl: './adduser.component.html',
-  styleUrls: ['./adduser.component.css']
+  styleUrls: ['./adduser.component.css'],
+  providers: [MessageService]
 })
 export class AdduserComponent implements OnInit {
 
+  
+
+  // creamos el formulario al inicio del componente
+  // declaramos los componentes del formulario para llamarlos desde la vista
   userForm = new FormGroup({
     username: new FormControl(''),
     first_name: new FormControl(''),
@@ -20,10 +37,7 @@ export class AdduserComponent implements OnInit {
     
   })
 
-  
-
-  
-
+  // definimos los posibles grupos
   groups: string[] = [
     'Administracion', 
     'Logistica', 
@@ -33,23 +47,40 @@ export class AdduserComponent implements OnInit {
     'RRHH'
   ]
 
+  // definimos los tipos de permiso
   permissions: string[] = [
     'All',
     'Read',
     'Write'
   ]
 
+  // booleanos que definiran los roles del usuario
   staff: boolean = true
   activeUser: boolean = false
   superUser: boolean = false
 
 
-  constructor() { }
+  constructor(
+    private authService : AuthService,
+    private uEService   : UserEventsService,
+    private messageService: MessageService, 
+    private primengConfig: PrimeNGConfig
+    ) { }
+
+  // loading sppiner
+  loading$ = this.authService.loading$
 
   ngOnInit(): void {
+    this.primengConfig.ripple = true;
   }
 
-  onSubmit() {
+  // funcion on submit para el envio del formulario
+  /*
+  Esta funcion deberia capturar los datos ingresados en el formulario y llamar
+  a la funcion crear usuario
+  TODO: Implementar NGToast o similar para mostrar exito / error / advertencia
+  */ 
+  async onSubmit() {
     let _user: User = {           
       username          :this.userForm.value.username!,
       first_name        :this.userForm.value.first_name!,
@@ -63,10 +94,18 @@ export class AdduserComponent implements OnInit {
       is_superuser      :this.superUser
       
     }
-    console.info(_user)
+    await this.authService.createUser(_user).then((resp) => {
+      resp.subscribe(
+        resp => {
+          console.info(resp);
+          this.messageService.add({key: 'bc', severity:'success', summary: 'Exito!', detail: 'Usuario creado con exito'});
+          this.uEService.newUser(_user)
+        }
+      )
+    })
   }
 
-
+  // funciones para cambiar los checks del formulario
   changeStaff(){
     this.staff = !this.staff
     console.log(this.staff);

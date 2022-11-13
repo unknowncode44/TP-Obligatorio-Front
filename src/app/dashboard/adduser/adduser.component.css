@@ -1,13 +1,30 @@
 /* contenedor general */
 
 .au-wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     min-width: 100%;
-    min-height: 100%;
+    max-width: 100%;
+    min-height: 90%;
+    max-height: 90%;
     padding: 10px;
     border-radius: 15px 0px 0px 15px;
-    background: var(--white);
+    background: var(--secondary);
+}
+
+.au-wrapper .loadingspinner {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0%;
+    z-index: 1001;
+    background: var(--primary);
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.5;
+    align-items: center;
+    justify-content: center;
 }
 
 .au-wrapper .title {
@@ -19,7 +36,7 @@
 
 .au-wrapper .title h1 {
     font-weight: 300;
-    font-size: 44px;
+    font-size: 32px;
 }
 
 .au-wrapper .field form {
@@ -30,7 +47,7 @@
 }
 
 .au-wrapper .field form label {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 200;
     margin-left: 10px;
     margin-top: 5px;
@@ -39,9 +56,9 @@
 .au-wrapper .field form input,
 .au-wrapper .field form select {
     background: #fff;
-    padding: 4px 15px;
+    padding: 8px 8px;
     margin-top: 2px;
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 300;
     border-radius: 10px;
     border-style: none;
@@ -71,7 +88,7 @@
 }
 
 .au-wrapper .field .checks label {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 200;
 }
 
@@ -133,11 +150,12 @@
 }
 
 .au-wrapper .field .au-btns input {
-    font-size: 20px;
+    font-size: 16px;
     color: #fff;
     background: var(--primary);
     padding: 0.7em 2px;
     width: 150px;
+    margin: 2px;
 }
 
 

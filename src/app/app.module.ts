@@ -20,6 +20,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { NetworkInterceptor } from './dashboard/helpers/network.interceptor';
 import { FundsComponent } from './dashboard/funds/funds.component';
 import { AuthwrapperComponent } from './auth/authwrapper/authwrapper.component';
+import {ToastModule} from 'primeng/toast';
+import {RippleModule} from 'primeng/ripple';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { AuthwrapperComponent } from './auth/authwrapper/authwrapper.component';
       metaReducers
     }),
     BrowserAnimationsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    RippleModule,
+    ToastModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

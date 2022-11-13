@@ -1,21 +1,31 @@
 /* contenedor general, contiene el sidebar y el content */
 
 .dash-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 3px 2px 16px 2px;
     position: relative;
-    width: 100%;
+    max-width: 100%;
+}
+
+.dash-container .sidebar-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 1px 3px 2px 1px;
+    position: relative;
+    width: 310px;
+    max-height: 100%;
 }
 
 
 /* este contenedor solo envuelve el content */
 
-.content-wrapper {
-    position: absolute;
+.dash-container .content-wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
-    right: 3px;
-    top: 3px;
-    height: 100%;
+    max-height: 90%;
     width: calc(100% - 310px);
 }
 
@@ -26,11 +36,12 @@
     display: flex;
     flex-direction: row;
     min-width: 100%;
-    height: 100px;
-    margin-bottom: 20px;
+    max-width: 100%;
+    height: 60px;
+    margin-bottom: 8px;
     background-color: #ffff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-    padding: 10px 0px;
+    padding: 4px 0px;
 }
 
 
@@ -42,7 +53,7 @@
     display: block;
     width: 86%;
     font-weight: 300;
-    font-size: 44px;
+    font-size: 36px;
 }
 
 .content-wrapper .topbar .tb-title p span {
@@ -75,7 +86,23 @@
     margin-right: 3px;
     display: flex;
     flex-direction: row;
-    min-height: calc(100% + 80px);
+    justify-content: space-between;
     padding: 10px;
     border-radius: 15px;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.content-wrapper .component-wrapper .component1 {
+    min-width: 35%;
+    max-height: 100%;
+}
+
+.content-wrapper .component-wrapper .component2 {
+    min-width: 65%;
+}
+
+.content-wrapper .component-wrapper .component3 {
+    min-width: 100%;
+    max-width: 100%;
 }

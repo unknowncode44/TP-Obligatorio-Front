@@ -1,9 +1,12 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit }      from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
-import { User } from '../models/user.model';
-import { UserService } from '../services/user.service';
+import { Router }                 from '@angular/router';
+import { json } from 'express';
+import { UserEventsService } from 'src/app/common_services/user-events.service';
+import { User }                   from '../models/user.model';
+import { AuthService } from '../services/auth.service';
+import { UserService }            from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +15,7 @@ import { UserService } from '../services/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  userForm = new FormGroup({
+  userForm =  new FormGroup({
     username: new FormControl(''),
     password: new FormControl('')
   })
@@ -20,7 +23,12 @@ export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
 
-  constructor(private _userService: UserService, private router: Router) { }
+  constructor(
+    private _userService: UserService, 
+    private router      : Router,
+    private authService : AuthService,
+    private uEService   : UserEventsService
+    ) { }
 
   ngOnInit(): void {
   }
@@ -30,10 +38,6 @@ export class LoginComponent implements OnInit {
   login() {
     this.password = this.userForm.value.password!;
     this.username = this.userForm.value.username!;
-
-    console.log(this.password);
-    console.log(this.username);
-
 
     //validamos que el usuario ingrese datos
 
@@ -50,13 +54,21 @@ export class LoginComponent implements OnInit {
     }
 
     // comprobamos que los campos sean validos, almaceno el token el localStorage y dirigimos al usuario al dashboard
-
     this._userService.login(user).then(res => {
       res.subscribe((token) => {
-        console.log(token);
-        localStorage.setItem('token', token);
+
+        
+        //! La respuesta que recibimos es un objeto, no un string, por ello hay que parsearla   
+        var _token = JSON.parse(JSON.stringify(token))
+
+        // una vez parseada la pasamos al localstorage
+        localStorage.setItem('token', _token.token);
+        let user_f_name = _token.result[0].first_name
+        console.info(user_f_name);
+
+        this.uEService.loggedUser(user_f_name)
         this._userService.loginSuccess()
-        this.router.navigate(['/dashboard'])
+        this.router.navigate(['/dashboard', {user_f_name}])
   
       }
       )

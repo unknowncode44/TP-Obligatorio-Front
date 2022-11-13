@@ -1,7 +1,8 @@
 <div class="dash-container">
-    <app-sidebar></app-sidebar>
+    <div class="sidebar-wrapper">
+        <app-sidebar></app-sidebar>
+    </div>
     <div class="content-wrapper">
-
         <!-- barra de notificaciones -->
         <div class="topbar">
             <!-- bienvenida + nombre de usuario -->
@@ -21,13 +22,19 @@
         <!-- envonltura de los subcomponentes -->
         <div class="component-wrapper" *ngIf="funds | async">
             <!-- insertar subcomponentes aca -->
-            <app-funds></app-funds>
+            <div class="component3">
+                <app-funds></app-funds>
+            </div>
         </div>
 
         <div class="component-wrapper" *ngIf="users | async">
             <!-- insertar subcomponentes aca -->
-            <app-adduser></app-adduser>
-            <app-seeusers></app-seeusers>
+            <div class="component1">
+                <app-adduser></app-adduser>
+            </div>
+            <div class="component2">
+                <app-seeusers></app-seeusers>
+            </div>
         </div>
 
     </div>

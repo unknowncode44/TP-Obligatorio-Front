@@ -1,10 +1,10 @@
 export interface User{
     user_id?        : number;
     username        : string;
-    first_name      : string;
-    last_name       : string;
+    first_name     : string;
+    last_name      : string;
     email           : string;
-    pass?           : string;
+    pass            : string;
     gro_ups         : string;
     user_permission : string;
     is_staff        : boolean;
