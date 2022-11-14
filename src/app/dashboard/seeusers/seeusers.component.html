@@ -48,30 +48,32 @@
                 <input type="text" placeholder="Buscar Usuario">
             </div>
         </div>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Usuario</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Mail</th>
-                <th>Grupo</th>
-                <th>Permisos</th>
-                <th>Acciones</th>
-            </tr>
-            <tr *ngFor="let user of usersArr">
-                <td> {{ user.user_id }} </td>
-                <td> {{ user.username }} </td>
-                <td> {{ user.first_name }} </td>
-                <td> {{ user.last_name }} </td>
-                <td> {{ user.email }} </td>
-                <td> {{ user.gro_ups }} </td>
-                <td> {{ user.user_permission }} </td>
-                <td class="tb-actions">
-                    <button class="edit" (click)="userService.show()"><i class="ion ion-md-create"></i></button>
-                    <button class="delete" (click)="deleteUser(user.user_id!.toString())"><i class="ion ion-md-trash"></i></button>
-                </td>
-            </tr>
-        </table>
+        <div class="table-wr">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Mail</th>
+                    <th>Grupo</th>
+                    <th>Permisos</th>
+                    <th>Acciones</th>
+                </tr>
+                <tr *ngFor="let user of usersArr">
+                    <td> {{ user.user_id }} </td>
+                    <td> {{ user.username }} </td>
+                    <td> {{ user.first_name }} </td>
+                    <td> {{ user.last_name }} </td>
+                    <td> {{ user.email }} </td>
+                    <td> {{ user.gro_ups }} </td>
+                    <td> {{ user.user_permission }} </td>
+                    <td class="tb-actions">
+                        <button class="edit" (click)="userService.show()"><i class="ion ion-md-create"></i></button>
+                        <button class="delete" (click)="deleteUser(user.user_id!.toString())"><i class="ion ion-md-trash"></i></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>

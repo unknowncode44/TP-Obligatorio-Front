@@ -28,20 +28,14 @@ export class DashboardComponent implements OnInit {
       
     }
 
-  ngOnInit(): void { 
-    this.checkName()
-    if(this.username === ''){
-      this.checkName()
-    }
-  }
-
-  checkName() {
+  ngOnInit(): void {
+    this.username = localStorage.getItem('fristName')! 
     this.uEService.loggedUserName.subscribe(
-      (name: string) => {
-        console.log(name + "  <==++");
-        this.username = name
+      p => {
+        this.username = p
       }
     )
   }
+
 
 }

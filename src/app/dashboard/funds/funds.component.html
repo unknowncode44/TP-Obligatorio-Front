@@ -5,16 +5,16 @@
         </div>
         <div class="see-funds">
             <div class="funds-income">
-                <h4>Disponible</h4>
+                <h4>Mi Disponible</h4>
                 <div class="money">
                     <h2>$</h2>
-                    <h2 class="amount">100.00</h2>
+                    <h2 class="amount">{{myFunds}}</h2>
                 </div>
             </div>
             <div class="separator"></div>
         </div>
         <div class="subtitle">
-            <h2>Ingreso / Egreso de Fondos</h2>
+            <h2>Transferir <span class="icon ion ion-md-swap"></span></h2>
         </div>
         <div class="form-tab">
             <div class="field">
@@ -26,6 +26,26 @@
                     <label for="amount">Monto</label>
                     <input name="amount" type="number" formControlName="quantity">
                     <input type="submit" class="btn" value="Transferir">
+                </form>
+            </div>
+        </div>
+        <div class="subtitle">
+            <h2>Ingresar fondos <span class="icon ion ion-md-add"></span></h2>
+        </div>
+        <div class="form-tab-2">
+            <div class="field">
+                <form [formGroup]="addFundsForm" (ngSubmit)="addFunds()">
+                    <div class="form-control-input">
+                        <div class="user-input">
+                            <label for="user">Usuario</label>
+                            <input name="user" type="number" formControlName="user_">
+                        </div>
+                        <div class="amount-input">
+                            <label for="transf-amount">Importe</label>
+                            <input name="user" type="number" formControlName="amount_">
+                        </div>
+                    </div>
+                    <input type="submit" class="btn" value="Ingresar">
                 </form>
             </div>
         </div>
@@ -51,30 +71,32 @@
                 </div>
 
             </div>
-            <table>
-                <tr>
-                    <th>Fecha</th>
-                    <th>ID Transaccion</th>
-                    <th>Origen</th>
-                    <th>Destino</th>
-                    <th>Monto</th>
-                    <th>Status</th>
-                    <th>Acciones</th>
+            <div class="table-wr">
+                <table>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>ID Transaccion</th>
+                        <th>Origen</th>
+                        <th>Destino</th>
+                        <th>Monto</th>
+                        <th>Status</th>
+                        <th>Acciones</th>
 
-                </tr>
-                <tr>
-                    <td> 17/11/2022 </td>
-                    <td> 001 </td>
-                    <td> Usuario </td>
-                    <td> Usuario2 </td>
-                    <td> 300.00 </td>
-                    <td> Aprobada </td>
-                    <td class="tb-actions">
-                        <button class="edit"><i class="ion ion-md-create"></i></button>
-                        <button class="delete"><i class="ion ion-md-trash"></i></button>
-                    </td>
-                </tr>
-            </table>
+                    </tr>
+                    <tr>
+                        <td> 17/11/2022 </td>
+                        <td> 001 </td>
+                        <td> Usuario </td>
+                        <td> Usuario2 </td>
+                        <td> 300.00 </td>
+                        <td> Aprobada </td>
+                        <td class="tb-actions">
+                            <button class="edit"><i class="ion ion-md-create"></i></button>
+                            <button class="delete"><i class="ion ion-md-trash"></i></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </div>

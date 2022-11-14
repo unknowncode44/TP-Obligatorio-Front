@@ -63,12 +63,21 @@ export class LoginComponent implements OnInit {
 
         // una vez parseada la pasamos al localstorage
         localStorage.setItem('token', _token.token);
-        let user_f_name = _token.result[0].first_name
-        console.info(user_f_name);
 
+        // tambien recolectamos otros datos que nos seran utiles
+        let user_f_name = _token.result[0].first_name;
+        let user_id     = _token.result[0].user_id;
+        localStorage.setItem('fristName', user_f_name);
+        localStorage.setItem('user_id', user_id);
+
+        // avisamos al servicio de eventos de usuario
         this.uEService.loggedUser(user_f_name)
+        
+        // avisamos que el login fue exitoso
         this._userService.loginSuccess()
-        this.router.navigate(['/dashboard', {user_f_name}])
+
+        // navegamos a dashboard
+        this.router.navigate(['/dashboard'])
   
       }
       )

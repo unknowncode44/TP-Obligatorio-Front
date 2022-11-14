@@ -17,6 +17,10 @@
             <div class="tb-my-account">
                 <i class="ion ion-md-contact"></i>
             </div>
+            <!-- boton menu para vista responsive -->
+            <div class="tb-menu">
+                <i class="ion ion-md-menu"></i>
+            </div>
         </div>
 
         <!-- envonltura de los subcomponentes -->
@@ -25,6 +29,7 @@
             <div class="component3">
                 <app-funds></app-funds>
             </div>
+
         </div>
 
         <div class="component-wrapper" *ngIf="users | async">
@@ -37,5 +42,11 @@
             </div>
         </div>
 
+
+
     </div>
+
+</div>
+<div class="bottom-bar">
+    <app-bottombar></app-bottombar>
 </div>

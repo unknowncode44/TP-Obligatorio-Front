@@ -4,9 +4,58 @@
     height: 86vh;
 }
 
+@media only screen and (max-width: 600px) {
+    .funds-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .see-funds-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        min-width: 100% !important;
+        max-width: 100%;
+        max-height: 40px !important;
+        padding: 0px 0px;
+        border-radius: 15px !important;
+        background: var(--primary);
+    }
+    .see-transactions-wrapper {
+        position: relative;
+        margin-top: 1rem !important;
+        display: flex;
+        flex-direction: column;
+        min-width: 100%;
+        max-width: 100% !important;
+        max-height: 100%;
+        padding: 0px 0px;
+        border-radius: 15px !important;
+        background: var(--primary);
+    }
+    .see-transactions-wrapper .su-table-wrapper {
+        position: relative;
+        max-width: 350px;
+        max-height: 800px;
+    }
+    .see-transactions-wrapper .table-wr {
+        max-width: 100%;
+        overflow: auto;
+    }
+    .see-transactions-wrapper .su-table-wrapper table {
+        overflow: auto !important;
+        max-width: 100%;
+        max-height: 100%;
+        z-index: 0;
+    }
+}
+
 .see-funds-wrapper {
     display: flex;
     flex-direction: column;
+    align-content: center;
+    align-items: center;
     min-width: 35%;
     max-width: 35%;
     min-height: 100%;
@@ -17,12 +66,15 @@
 
 .see-funds-wrapper .title {
     display: flex;
-    min-height: 80px;
+    min-width: 100%;
+    min-height: 60px;
     padding-left: 20px;
     align-items: center;
+    text-align: start;
 }
 
 .see-funds-wrapper .title h1 {
+    width: 100%;
     font-weight: 300;
     font-size: 32px;
     color: #fff;
@@ -31,7 +83,7 @@
 .see-funds-wrapper .see-funds {
     display: block;
     flex-direction: row;
-    width: 100%;
+    width: 80%;
     padding: 1px 10px;
 }
 
@@ -42,7 +94,7 @@
 .see-funds-wrapper .see-funds .funds-income,
 .see-funds-wrapper .see-funds .funds-outcome {
     min-width: 50%;
-    height: 150px;
+    height: 100px;
     background: var(--white);
     border-radius: 15px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
@@ -57,8 +109,9 @@
     display: block;
     align-content: center;
     justify-content: center;
-    text-align: center;
-    font-size: 28px;
+    text-align: start;
+    padding-left: 1rem;
+    font-size: 20px;
     font-weight: 300;
 }
 
@@ -74,7 +127,7 @@
 .see-funds-wrapper .see-funds .funds-income .money h2,
 .see-funds-wrapper .see-funds .funds-outcome .money h2 {
     font-weight: 600;
-    font-size: 48px;
+    font-size: 36px;
 }
 
 .see-funds-wrapper .see-funds .funds-income .money h2.amount,
@@ -85,16 +138,17 @@
 
 .see-funds-wrapper .subtitle {
     display: flex;
-    min-height: 80px;
+    min-height: 40px;
     width: 100%;
     padding-left: 20px;
     align-items: center;
+    text-align: start;
 }
 
 .see-funds-wrapper .subtitle h2 {
-    margin: auto;
+    margin: auto 0px;
     font-weight: 300;
-    font-size: 28px;
+    font-size: 24px;
     color: #fff;
 }
 
@@ -102,14 +156,26 @@
     display: flex;
     flex-direction: column;
     width: 95%;
-    background: var(--white);
+    background: var(--secondary);
     border-radius: 15px 15px 15px 15px;
-    height: 350px;
-    padding: 1rem;
-    margin: 10px auto;
+    height: 300px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin: 2px auto;
 }
 
-.see-funds-wrapper .form-tab .field form {
+.see-funds-wrapper .form-tab-2 {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    background: var(--secondary);
+    border-radius: 15px 15px 15px 15px;
+    height: 150px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin: 2px auto;
+}
+
+.see-funds-wrapper .form-tab .field form,
+.see-funds-wrapper .form-tab-2 .field form {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -117,7 +183,25 @@
     align-items: center;
 }
 
-.see-funds-wrapper .form-tab .field form label {
+.see-funds-wrapper .form-tab-2 .field form .form-control-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.see-funds-wrapper .form-tab-2 .field form .form-control-input .user-input {
+    min-width: 60%;
+    padding: 0 5px;
+}
+
+.see-funds-wrapper .form-tab-2 .field form .form-control-input .amount-input {
+    min-width: 30%;
+    max-width: 30%;
+    padding: 0 5px;
+}
+
+.see-funds-wrapper .form-tab .field form label,
+.see-funds-wrapper .form-tab-2 .field form label {
     font-size: 16px;
     font-weight: 200;
     width: 100%;
@@ -125,7 +209,8 @@
     margin-top: 5px;
 }
 
-.see-funds-wrapper .form-tab .field form input {
+.see-funds-wrapper .form-tab .field form input,
+.see-funds-wrapper .form-tab-2 .field form input {
     background: #fff;
     padding: 8px 16px;
     margin-top: 2px;
@@ -137,7 +222,8 @@
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
 }
 
-.see-funds-wrapper .form-tab .field form input.btn {
+.see-funds-wrapper .form-tab .field form input.btn,
+.see-funds-wrapper .form-tab-2 .field form input.btn {
     font-size: 16px;
     color: #fff;
     background: var(--primary);
@@ -146,9 +232,10 @@
     margin-top: 2rem;
 }
 
-.see-funds-wrapper .form-tab .field input.btn:hover {
-    color: var(--primary);
-    background: #fff;
+.see-funds-wrapper .form-tab .field input.btn:hover,
+.see-funds-wrapper .form-tab-2 .field input.btn:hover {
+    color: var(--primary) !important;
+    background: #fff !important;
     transform: scale(1.05);
     transition: 0.3s;
 }
@@ -165,7 +252,7 @@
 
 .see-transactions-wrapper .title {
     display: flex;
-    min-height: 80px;
+    min-height: 60px;
     width: 100%;
     padding-left: 20px;
     align-items: center;
@@ -265,6 +352,8 @@
 
 .see-transactions-wrapper .su-table-wrapper table {
     border: none;
+    margin: 0 !important;
+    min-width: 100%;
 }
 
 .see-transactions-wrapper .su-table-wrapper table tr th {
