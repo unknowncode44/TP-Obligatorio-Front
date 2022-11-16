@@ -42,6 +42,14 @@
             </div>
         </div>
 
+        <div class="component-wrapper" *ngIf="settings | async">
+            <!-- insertar subcomponentes aca -->
+            <div class="component4">
+                <app-settings></app-settings>
+            </div>
+
+        </div>
+
 
 
     </div>

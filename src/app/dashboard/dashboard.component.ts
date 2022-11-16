@@ -17,9 +17,14 @@ export class DashboardComponent implements OnInit {
 
   username: string = ''
 
+  userRole  = localStorage.getItem('user_role')
+
+  canSee: boolean = true   
+
   
-  users = this.sbService.createUserActive
-  funds = this.sbService.fundsActive
+  users     = this.sbService.createUserActive
+  funds     = this.sbService.fundsActive
+  settings  = this.sbService.settingsActive
 
   constructor(
     private sbService: SidebarService,
@@ -36,6 +41,13 @@ export class DashboardComponent implements OnInit {
       }
     )
   }
+
+  checkRole(role: string){
+    if(role === 'read'){
+      this.canSee = !this.canSee
+    }
+  }
+
 
 
 }

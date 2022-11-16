@@ -67,8 +67,13 @@ export class LoginComponent implements OnInit {
         // tambien recolectamos otros datos que nos seran utiles
         let user_f_name = _token.result[0].first_name;
         let user_id     = _token.result[0].user_id;
+        let user_role   = _token.result[0].user_permission;
+
+        
+        
         localStorage.setItem('fristName', user_f_name);
         localStorage.setItem('user_id', user_id);
+        localStorage.setItem('user_role', user_role)
 
         // avisamos al servicio de eventos de usuario
         this.uEService.loggedUser(user_f_name)

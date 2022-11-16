@@ -1,3 +1,4 @@
+<p-toast position="bottom-center" key="bc"></p-toast>
 <div class="funds-wrapper">
     <div class="see-funds-wrapper">
         <div class="title">
@@ -18,7 +19,7 @@
         </div>
         <div class="form-tab">
             <div class="field">
-                <form [formGroup]="transactionForm">
+                <form [formGroup]="transactionForm" (ngSubmit)="createTransaction()">
                     <label for="source">Desde Cuenta</label>
                     <input name="source" type="number" formControlName="source_">
                     <label for="destiny">A Cuenta</label>
@@ -79,21 +80,14 @@
                         <th>Origen</th>
                         <th>Destino</th>
                         <th>Monto</th>
-                        <th>Status</th>
-                        <th>Acciones</th>
 
                     </tr>
-                    <tr>
-                        <td> 17/11/2022 </td>
-                        <td> 001 </td>
-                        <td> Usuario </td>
-                        <td> Usuario2 </td>
-                        <td> 300.00 </td>
-                        <td> Aprobada </td>
-                        <td class="tb-actions">
-                            <button class="edit"><i class="ion ion-md-create"></i></button>
-                            <button class="delete"><i class="ion ion-md-trash"></i></button>
-                        </td>
+                    <tr *ngFor="let trans of transactionsArray">
+                        <td>{{ trans.date_ }}</td>
+                        <td>{{ trans.id_transaction }}</td>
+                        <td>{{ trans.source_ }}</td>
+                        <td>{{ trans.destiny }}</td>
+                        <td> {{ trans.quantity }}</td>
                     </tr>
                 </table>
             </div>

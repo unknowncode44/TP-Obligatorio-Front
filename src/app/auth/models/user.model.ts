@@ -10,5 +10,6 @@ export interface User {
     user_permission?    : string;
     is_staff?           : boolean;
     is_active?          : boolean;
-    is_superuser?       : boolean; 
+    is_superuser?       : boolean;
+    money?              : number;  
 }

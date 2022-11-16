@@ -23,6 +23,7 @@ import { AuthwrapperComponent } from './auth/authwrapper/authwrapper.component';
 import {ToastModule} from 'primeng/toast';
 import {RippleModule} from 'primeng/ripple';
 import { BottombarComponent } from './dashboard/sidebar/bottombar/bottombar.component';
+import { SettingsComponent } from './dashboard/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { BottombarComponent } from './dashboard/sidebar/bottombar/bottombar.comp
     FundsComponent,
     AuthwrapperComponent,
     BottombarComponent,
+    SettingsComponent,
     
   ],
   

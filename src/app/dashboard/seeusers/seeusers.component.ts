@@ -21,13 +21,18 @@ export class SeeusersComponent implements OnInit {
   arrayUsrs: User[] = []
 
   // loading sppiner
-  loading$ = this.userService.loading$
+  loading$  = this.userService.loading$
+
+  
+
+  
+  
 
   constructor(
     public userService: AuthService, 
     private router    : Router,
     private uEService : UserEventsService) {
-
+    
     // en el constructor ya solicitamos los usuarios para mostrarlos en la tabla
     this.userService.getUsers().then(
       p => {
@@ -62,6 +67,7 @@ export class SeeusersComponent implements OnInit {
     })
     
   }
+
 
   
 
