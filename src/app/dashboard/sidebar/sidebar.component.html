@@ -6,26 +6,20 @@
             <h3 class="brand-name"><strong>HV Devs </strong>Transactions</h3>
         </a>
 
-        <li [ngClass]="createUserActive ? 'active' : ''">
-            <a href="#" (click)="setActive('createUser')">
+        <li *ngIf="canSee" [ngClass]="createUserActive ? 'active' : ''">
+            <a (click)="setActive('createUser')">
                 <span class="icon2"><i class="ion ion-md-person-add"></i></span>
-                <span class="title">Crear Usuario</span>
-            </a>
-        </li>
-        <li [ngClass]="seeUserActive ? 'active' : ''">
-            <a href="#" (click)="setActive('seeUsers')">
-                <span class="icon ion ion-md-people"></span>
-                <span class="title">Ver usuarios</span>
+                <span class="title">Usuarios</span>
             </a>
         </li>
         <li [ngClass]="fundsActive ? 'active' : ''">
-            <a href="#" (click)="setActive('seeFunds')">
+            <a (click)="setActive('seeFunds')">
                 <span class="icon ion ion-md-cash"></span>
                 <span class="title">Fondos</span>
             </a>
         </li>
         <li [ngClass]="settingsActive ? 'active' : ''">
-            <a href="#" (click)="setActive('settings')">
+            <a (click)="setActive('settings')">
                 <span class="icon ion ion-md-settings"></span>
                 <span class="title">Configuracion</span>
             </a>

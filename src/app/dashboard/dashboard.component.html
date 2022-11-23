@@ -1,7 +1,8 @@
 <div class="dash-container">
-    <app-sidebar></app-sidebar>
+    <div class="sidebar-wrapper">
+        <app-sidebar></app-sidebar>
+    </div>
     <div class="content-wrapper">
-
         <!-- barra de notificaciones -->
         <div class="topbar">
             <!-- bienvenida + nombre de usuario -->
@@ -16,13 +17,44 @@
             <div class="tb-my-account">
                 <i class="ion ion-md-contact"></i>
             </div>
+            <!-- boton menu para vista responsive -->
+            <div class="tb-menu">
+                <i class="ion ion-md-menu"></i>
+            </div>
         </div>
 
         <!-- envonltura de los subcomponentes -->
-        <div class="component-wrapper">
+        <div class="component-wrapper" *ngIf="funds | async">
             <!-- insertar subcomponentes aca -->
-            <app-adduser></app-adduser>
+            <div class="component3">
+                <app-funds></app-funds>
+            </div>
+
         </div>
 
+        <div class="component-wrapper" *ngIf="users | async">
+            <!-- insertar subcomponentes aca -->
+            <div class="component1">
+                <app-adduser></app-adduser>
+            </div>
+            <div class="component2">
+                <app-seeusers></app-seeusers>
+            </div>
+        </div>
+
+        <div class="component-wrapper" *ngIf="settings | async">
+            <!-- insertar subcomponentes aca -->
+            <div class="component4">
+                <app-settings></app-settings>
+            </div>
+
+        </div>
+
+
+
     </div>
+
+</div>
+<div class="bottom-bar">
+    <app-bottombar></app-bottombar>
 </div>

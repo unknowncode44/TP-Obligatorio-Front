@@ -1,21 +1,89 @@
 /* contenedor general, contiene el sidebar y el content */
 
 .dash-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 3px 2px 16px 2px;
     position: relative;
-    width: 100%;
+    max-width: 100%;
+}
+
+.dash-container .sidebar-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 1px 3px 2px 1px;
+    position: relative;
+    width: 310px;
+    max-height: 100%;
+    transition: 0.5s linear;
+}
+
+@media only screen and (max-width: 600px) {
+    .dash-container .sidebar-wrapper {
+        display: none;
+        transition: 0.5s linear;
+    }
+    .dash-container {
+        padding: 8px 16px;
+    }
+    .dash-container .content-wrapper {
+        min-width: 100%;
+        max-width: 100%;
+        height: 800px;
+        position: relative !important;
+    }
+    .content-wrapper .topbar .tb-notifications,
+    .content-wrapper .topbar .tb-my-account {
+        display: none !important;
+    }
+    .content-wrapper .topbar .tb-notifications i,
+    .content-wrapper .topbar .tb-my-account i {
+        display: none;
+    }
+    .content-wrapper .topbar .tb-menu {
+        width: 7%;
+        display: block !important;
+        margin: auto;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .content-wrapper .topbar .tb-menu i {
+        display: block !important;
+        font-size: 36px;
+        color: rgba(0, 0, 0, 0.6);
+    }
+    .bottom-bar {
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        bottom: 0px;
+        z-index: 2000;
+        display: flex !important;
+        flex-direction: row;
+        padding: 2px 1rem;
+        justify-content: space-between;
+        background: var(--primary);
+        border-radius: 15px 15px 0px 0px;
+    }
+    .content-wrapper .component-wrapper {
+        margin-top: 0px;
+        flex-direction: column !important;
+        overflow: auto;
+        padding: 2px;
+        min-width: 100%;
+        max-width: 100%;
+    }
 }
 
 
 /* este contenedor solo envuelve el content */
 
-.content-wrapper {
-    position: absolute;
+.dash-container .content-wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
-    right: 3px;
-    top: 3px;
-    height: 910px;
+    max-height: 90%;
     width: calc(100% - 310px);
 }
 
@@ -26,9 +94,12 @@
     display: flex;
     flex-direction: row;
     min-width: 100%;
-    height: 80px;
-    background-color: var(--white);
+    max-width: 100%;
+    height: 60px;
+    margin-bottom: 8px;
+    background-color: #ffff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 4px 0px;
 }
 
 
@@ -40,7 +111,7 @@
     display: block;
     width: 86%;
     font-weight: 300;
-    font-size: 44px;
+    font-size: 36px;
 }
 
 .content-wrapper .topbar .tb-title p span {
@@ -59,6 +130,14 @@
     align-items: center;
 }
 
+.content-wrapper .topbar .tb-menu {
+    display: none;
+}
+
+.content-wrapper .topbar .tb-menu i {
+    display: none;
+}
+
 
 /* iconos */
 
@@ -71,9 +150,29 @@
 .content-wrapper .component-wrapper {
     margin-top: 5px;
     margin-right: 3px;
-    display: block;
-    min-height: calc(100% - 80px);
-    background: rgba(0, 0, 0, 0.10);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 10px;
     border-radius: 15px;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.content-wrapper .component-wrapper .component1 {
+    min-width: 35%;
+    max-height: 100%;
+}
+
+.content-wrapper .component-wrapper .component2 {
+    min-width: 65%;
+}
+
+.content-wrapper .component-wrapper .component3 {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.bottom-bar {
+    display: none;
 }

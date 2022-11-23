@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService } from './service/sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,35 +12,28 @@ export class SidebarComponent implements OnInit {
   seeUserActive     : boolean = false;
   fundsActive       : boolean = false;
   settingsActive    : boolean = false;
+
+  userRole  = localStorage.getItem('user_role')
+
+  canSee: boolean = true   
   
 
-  constructor() { }
+  constructor(private sbService: SidebarService) {
+  }
 
   ngOnInit(): void {
+    this.checkRole(this.userRole!)
   }
 
   setActive(section:string){
+    this.sbService.setActive(section)
+  }
 
-    this.createUserActive = false;
-    this.seeUserActive    = false;
-    this.fundsActive      = false;
-    this.settingsActive   = false;
-
-    switch (section) {
-      case 'createUser':
-        this.createUserActive = !this.createUserActive
-        break;
-      case 'seeUsers':
-        this.seeUserActive = !this.seeUserActive
-        break;
-      case 'seeFunds':
-        this.fundsActive = !this.fundsActive
-        break;
-      case 'settings':
-        this.settingsActive = !this.settingsActive
-        break;
-
+  checkRole(role: string){
+    if(role === 'Read'){
+      this.canSee = !this.canSee
     }
   }
+
 
 }

@@ -1,5 +1,5 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component } from '@angular/core';
+import { UserService } from './auth/services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -7,24 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-  
-
 export class AppComponent {
-  title = 'online-store';
-
-  isActive: boolean = false
-  
-
-  showRegisterLogin() {
-     if(!this.isActive){
-      this.isActive = true
-     }
-     else {
-      this.isActive = false
-     }
-  }
-
-
-
+  title = 'TP-Obligatorio';
 
 }

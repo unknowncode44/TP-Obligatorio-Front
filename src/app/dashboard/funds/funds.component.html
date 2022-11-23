@@ -1,0 +1,110 @@
+<p-toast position="bottom-center" key="bc"></p-toast>
+<div class="funds-wrapper">
+    <div class="see-funds-wrapper">
+        <div class="title">
+            <h1>Mis fondos</h1>
+        </div>
+        <div class="see-funds">
+            <div class="funds-income">
+                <h4>Mi Disponible</h4>
+                <div class="money">
+                    <h2>$</h2>
+                    <h2 class="amount">{{myFunds}}</h2>
+                </div>
+            </div>
+            <div class="separator"></div>
+        </div>
+        <div class="subtitle">
+            <h2>Transferir <span class="icon ion ion-md-swap"></span></h2>
+        </div>
+        <div class="form-tab">
+            <div class="field">
+                <form [formGroup]="transactionForm" (ngSubmit)="createTransaction()">
+                    <label for="source">Desde Cuenta</label>
+                    <input name="source" type="number" formControlName="source_" value="{{myId}}" placeholder="Mi cuenta: {{myId}}">
+                    <label for="destiny">A Cuenta</label>
+                    <input name="destiny" type="numner" formControlName="destiny">
+                    <label for="amount">Monto</label>
+                    <input name="amount" type="number" formControlName="quantity">
+                    <input type="submit" class="btn" value="Transferir">
+                </form>
+            </div>
+        </div>
+        <div class="subtitle">
+            <h2>Ingresar fondos <span class="icon ion ion-md-add"></span></h2>
+        </div>
+        <div class="form-tab-2">
+            <div class="field">
+                <form [formGroup]="addFundsForm" (ngSubmit)="addFunds()">
+                    <div class="form-control-input">
+                        <div class="user-input">
+                            <label for="user">Usuario</label>
+                            <input name="user" type="number" formControlName="user_">
+                        </div>
+                        <div class="amount-input">
+                            <label for="transf-amount">Importe</label>
+                            <input name="user" type="number" formControlName="amount_">
+                        </div>
+                    </div>
+                    <input type="submit" class="btn" value="Ingresar">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="see-transactions-wrapper">
+        <div class="title">
+            <h1>Mis Transacciones</h1>
+        </div>
+        <div class="su-table-wrapper">
+
+            <div class="su-table-header">
+                <div class="showQty">
+                    <p>Mostrar </p>
+                    <select id="">
+                        <option value="10">5</option>
+                        <option value="10">10</option>
+                   </select>
+                    <p>Transacciones</p>
+                </div>
+                <div class="separator">
+                    <mat-progress-spinner [mode]="'indeterminate'" *ngIf="loading$ | async"></mat-progress-spinner>
+                </div>
+                <div class="download-pdf-container" (click)="openPDF()">
+                    <a><span class="icon ion ion-md-document"></span></a>
+                    <p>PDF</p>
+                </div>
+                <div class="download-pdf-container" (click)="openXLS()">
+                    <a><span class="icon ion ion-md-document"></span></a>
+                    <p>XLS</p>
+                </div>
+
+            </div>
+            <div class="table-wr" id="htmlData">
+                <div class="img-wrapp-pdf" id="headerData">
+                    <h1>Mis transacciones</h1>
+                </div>
+                <div class="header-separator">
+
+                </div>
+                <table id="trans-table">
+                    <tr>
+                        <th>Fecha</th>
+                        <th>ID</th>
+                        <th>Origen</th>
+                        <th>Destino</th>
+                        <th>Monto</th>
+
+                    </tr>
+                    <tr *ngFor="let trans of transactionsArray">
+                        <td>{{ trans.date_ }}</td>
+                        <td>{{ trans.id_transaction }}</td>
+                        <td>{{ trans.source_ }}</td>
+                        <td>{{ trans.destiny }}</td>
+                        <td>${{ trans.quantity }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

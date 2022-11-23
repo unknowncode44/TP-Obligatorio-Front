@@ -1,7 +1,7 @@
-<form>
+<form [formGroup]="userForm" (ngSubmit)="login()">
     <h3>Ingresar</h3>
-    <input type="text" placeholder="mail@mail.com">
-    <input type="password" placeholder="Password">
-    <input type="submit" value="Ingresar">
+    <input type="text" placeholder="mail@mail.com" class="form-control" autocomplete="username" formControlName="username">
+    <input type="password" placeholder="Password" class="form-control" autocomplete="current-password" formControlName="password">
+    <input type="submit" value="Ingresar" class="form-control">
     <a href="#" class="forgot">Olvide Mi Contraseña</a>
 </form>

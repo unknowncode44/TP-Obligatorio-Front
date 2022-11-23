@@ -1,0 +1,475 @@
+.funds-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 86vh;
+}
+
+@media only screen and (max-width: 600px) {
+    .funds-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .see-funds-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        min-width: 100% !important;
+        max-width: 100%;
+        max-height: 40px !important;
+        padding: 0px 0px;
+        border-radius: 15px !important;
+        background: var(--primary);
+    }
+    .see-transactions-wrapper {
+        position: relative;
+        margin-top: 1rem !important;
+        display: flex;
+        flex-direction: column;
+        min-width: 100%;
+        max-width: 100% !important;
+        max-height: 100%;
+        padding: 0px 0px;
+        border-radius: 15px !important;
+        background: var(--primary);
+    }
+    .see-transactions-wrapper .su-table-wrapper {
+        position: relative;
+        max-width: 350px;
+        max-height: 800px;
+    }
+    .see-transactions-wrapper .table-wr {
+        max-width: 100%;
+        overflow: auto;
+    }
+    .see-transactions-wrapper .su-table-wrapper table {
+        overflow: auto !important;
+        max-width: 100%;
+        max-height: 100%;
+        z-index: 0;
+    }
+}
+
+.see-funds-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    min-width: 35%;
+    max-width: 35%;
+    min-height: 100%;
+    padding: 0px 0px;
+    border-radius: 15px 0px 0px 15px;
+    background: var(--primary);
+}
+
+.see-funds-wrapper .title {
+    display: flex;
+    min-width: 100%;
+    min-height: 60px;
+    padding-left: 20px;
+    align-items: center;
+    text-align: start;
+}
+
+.see-funds-wrapper .title h1 {
+    width: 100%;
+    font-weight: 300;
+    font-size: 32px;
+    color: #fff;
+}
+
+.see-funds-wrapper .see-funds {
+    display: block;
+    flex-direction: row;
+    width: 80%;
+    padding: 1px 10px;
+}
+
+.see-funds-wrapper .see-funds .separator {
+    min-width: 50%;
+}
+
+.see-funds-wrapper .see-funds .funds-income,
+.see-funds-wrapper .see-funds .funds-outcome {
+    min-width: 50%;
+    height: 100px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+    padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.see-funds-wrapper .see-funds .funds-income h4,
+.see-funds-wrapper .see-funds .funds-outcome h4 {
+    display: block;
+    align-content: center;
+    justify-content: center;
+    text-align: start;
+    padding-left: 1rem;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.see-funds-wrapper .see-funds .funds-income .money,
+.see-funds-wrapper .see-funds .funds-outcome .money {
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 0 1rem;
+    justify-content: space-between;
+}
+
+.see-funds-wrapper .see-funds .funds-income .money h2,
+.see-funds-wrapper .see-funds .funds-outcome .money h2 {
+    font-weight: 600;
+    font-size: 36px;
+}
+
+.see-funds-wrapper .see-funds .funds-income .money h2.amount,
+.see-funds-wrapper .see-funds .funds-outcome .money h2.amount {
+    min-width: 80%;
+    text-align: end;
+}
+
+.see-funds-wrapper .subtitle {
+    display: flex;
+    min-height: 40px;
+    width: 100%;
+    padding-left: 20px;
+    align-items: center;
+    text-align: start;
+}
+
+.see-funds-wrapper .subtitle h2 {
+    margin: auto 0px;
+    font-weight: 300;
+    font-size: 24px;
+    color: #fff;
+}
+
+.see-funds-wrapper .form-tab {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    background: var(--secondary);
+    border-radius: 15px 15px 15px 15px;
+    height: 300px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin: 2px auto;
+}
+
+.see-funds-wrapper .form-tab-2 {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    background: var(--secondary);
+    border-radius: 15px 15px 15px 15px;
+    height: 150px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin: 2px auto;
+}
+
+.see-funds-wrapper .form-tab .field form,
+.see-funds-wrapper .form-tab-2 .field form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.see-funds-wrapper .form-tab-2 .field form .form-control-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.see-funds-wrapper .form-tab-2 .field form .form-control-input .user-input {
+    min-width: 60%;
+    padding: 0 5px;
+}
+
+.see-funds-wrapper .form-tab-2 .field form .form-control-input .amount-input {
+    min-width: 30%;
+    max-width: 30%;
+    padding: 0 5px;
+}
+
+.see-funds-wrapper .form-tab .field form label,
+.see-funds-wrapper .form-tab-2 .field form label {
+    font-size: 16px;
+    font-weight: 200;
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.see-funds-wrapper .form-tab .field form input,
+.see-funds-wrapper .form-tab-2 .field form input {
+    background: #fff;
+    padding: 8px 16px;
+    margin-top: 2px;
+    font-size: 24px;
+    width: 100%;
+    font-weight: 300;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.see-funds-wrapper .form-tab .field form input.btn,
+.see-funds-wrapper .form-tab-2 .field form input.btn {
+    font-size: 16px;
+    color: #fff;
+    background: var(--primary);
+    padding: 0.7em 2px;
+    width: 150px;
+    margin-top: 2rem;
+}
+
+.see-funds-wrapper .form-tab .field input.btn:hover,
+.see-funds-wrapper .form-tab-2 .field input.btn:hover {
+    color: var(--primary) !important;
+    background: #fff !important;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.see-transactions-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    max-height: 100%;
+    padding: 0px 0px;
+    border-radius: 0px 15px 15px 0px;
+    background: var(--primary);
+}
+
+.see-transactions-wrapper .title {
+    display: flex;
+    min-height: 60px;
+    width: 100%;
+    padding-left: 20px;
+    align-items: center;
+}
+
+.see-transactions-wrapper .title h1 {
+    font-weight: 300;
+    font-size: 32px;
+    color: #fff;
+}
+
+.see-transactions-wrapper .su-table-wrapper {
+    min-width: 95%;
+    height: 600px;
+    margin: auto;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+    padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.see-transactions-wrapper .su-table-wrapper .su-table-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    height: 60px;
+    max-width: 100%;
+    background: var(--primary);
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.see-transactions-wrapper .su-table-wrapper .su-table-header .showQty {
+    display: inline-flex;
+    flex-direction: row;
+    width: 50%;
+    margin: auto;
+    color: var(--white);
+    justify-content: start;
+    margin-left: 10px;
+}
+
+.see-transactions-wrapper .su-table-wrapper .su-table-header .showQty p {
+    font-size: 18px;
+}
+
+.see-transactions-wrapper .su-table-wrapper .su-table-header .showQty select {
+    margin: 0 5px;
+    padding: 2px 5px;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.see-transactions-wrapper .su-table-wrapper .su-table-header .separator {
+    width: 30%;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    align-content: end;
+    justify-content: end;
+}
+
+.see-transactions-wrapper .su-table-wrapper .su-table-header .download-pdf-container {
+    width: 60px;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.see-transactions-wrapper .su-table-wrapper .su-table-header .download-pdf-container a {
+    color: var(--white);
+    display: block;
+    text-align: center;
+    font-size: 28px;
+}
+
+.see-transactions-wrapper .su-table-wrapper .su-table-header .download-pdf-container p {
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 200;
+    display: block;
+    text-align: center;
+}
+
+.see-transactions-wrapper .su-table-wrapper .su-table-header .separator mat-progress-spinner {
+    position: absolute;
+    z-index: 1000;
+    height: 10px;
+    transform: scale(0.3) translateY(-75px);
+}
+
+.see-transactions-wrapper .su-table-wrapper .su-table-header .th-search {
+    max-width: 25%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.see-transactions-wrapper .su-table-wrapper .su-table-header .th-search i {
+    font-size: 22px;
+    margin: 5px 10px;
+    color: var(--white);
+}
+
+.see-transactions-wrapper .su-table-wrapper .su-table-header .th-search input {
+    padding: 2px 5px;
+    max-width: 85%;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.see-transactions-wrapper .su-table-wrapper table {
+    border: none;
+    margin: 0 !important;
+    min-width: 100%;
+}
+
+.see-transactions-wrapper .su-table-wrapper table tr th {
+    height: 30px;
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 400;
+}
+
+.see-transactions-wrapper .su-table-wrapper table tr td {
+    height: 30px;
+    background: var(--white);
+    font-weight: 400;
+    padding: 0 5px;
+}
+
+.table-wr .img-wrapp-pdf {
+    display: none;
+}
+
+.table-wr .img-wrapp-pdf.active {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-height: 60px;
+    min-width: 100%;
+    background: var(--primary);
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+.table-wr .img-wrapp-pdf.active h1 {
+    font-weight: 400;
+    width: 60%;
+    text-align: center;
+    color: var(--white);
+}
+
+.see-transactions-wrapper .su-table-wrapper table tr td:nth-child(5),
+.see-transactions-wrapper .su-table-wrapper table tr td:nth-child(2) {
+    text-align: end;
+}
+
+.see-transactions-wrapper .su-table-wrapper table tr td.tb-actions {
+    align-items: center !important;
+    text-align: center;
+    width: 120px;
+}
+
+.see-transactions-wrapper .su-table-wrapper table tr td.tb-actions button {
+    height: 30px;
+    width: 30px;
+    margin: 0 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.see-transactions-wrapper .su-table-wrapper table tr td.tb-actions button.edit {
+    background: var(--primary);
+}
+
+.see-transactions-wrapper .su-table-wrapper table tr td.tb-actions button.delete {
+    background: red;
+}
+
+.see-transactions-wrapper .su-table-wrapper table tr td.tb-actions button.edit:hover {
+    background: var(--white);
+    border: 1px solid var(--primary) !important;
+    transform: scale(1.05);
+    transition: 0.25s;
+}
+
+.see-transactions-wrapper .su-table-wrapper table tr td.tb-actions button.delete:hover {
+    background: var(--white);
+    border: 1px solid red !important;
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.see-transactions-wrapper .su-table-wrapper table tr td.tb-actions button.edit:hover i {
+    color: var(--primary);
+}
+
+.see-transactions-wrapper .su-table-wrapper table tr td.tb-actions button.delete:hover i {
+    color: red;
+}
+
+.see-transactions-wrapper .su-table-wrapper table tr td.tb-actions button i {
+    font-size: 20px;
+    color: var(--white);
+}

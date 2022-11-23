@@ -1,0 +1,283 @@
+/* contenedor general */
+
+.su-wrapper {
+    display: flex;
+    flex-direction: column;
+    background: var(--primary);
+    justify-content: space-between;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 90%;
+    max-height: 90%;
+    padding: 10px 20px 20px 20px;
+    border-radius: 0px 15px 15px 0px;
+}
+
+@media only screen and (max-width: 600px) {
+    .su-wrapper {
+        margin-top: 1rem !important;
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+        padding: 20px;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    .su-wrapper .su-cards {
+        min-width: 100%;
+        max-height: 60px !important;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .su-wrapper .su-cards .su-card {
+        width: 30% !important;
+        justify-content: center !important;
+        align-items: center;
+    }
+    .su-wrapper .su-cards .su-card .su-card-number h1 {
+        font-weight: 400;
+        font-size: 28px !important;
+    }
+    .su-wrapper .su-cards .su-card .su-card-text {
+        padding: 0 !important;
+    }
+    .su-wrapper .su-cards .su-card .su-card-text p {
+        display: none;
+    }
+    .su-wrapper .su-table-wrapper {
+        position: relative;
+        max-width: 350px;
+    }
+    .su-wrapper .table-wr {
+        max-width: 100%;
+        overflow: auto;
+    }
+    .su-wrapper .su-table-wrapper table {
+        overflow: auto !important;
+        max-width: 100%;
+        max-height: 100%;
+        z-index: 0;
+    }
+    .su-wrapper .su-table-wrapper .su-table-header .separator {
+        width: 5% !important;
+        padding: 2px;
+    }
+    .su-wrapper .su-table-wrapper .su-table-header .showQty p {
+        font-size: 16px !important;
+        font-weight: 400;
+    }
+    .su-wrapper .su-table-wrapper .su-table-header .th-search {
+        display: none !important;
+    }
+}
+
+
+/* titulo */
+
+.su-wrapper .title {
+    display: flex;
+    min-height: 80px;
+    padding-left: 20px;
+    align-items: center;
+}
+
+.su-wrapper .title h1 {
+    font-weight: 300;
+    font-size: 32px;
+    color: var(--white);
+}
+
+.su-wrapper .su-cards {
+    min-width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+.su-wrapper .su-cards .su-card {
+    width: 25%;
+    min-height: 99%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+    background: var(--white);
+    border-radius: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.su-wrapper .su-cards .su-card:hover {
+    transform: scale(1.05);
+}
+
+.su-wrapper .su-cards .su-card .su-card-text {
+    padding: 0.35em 0px;
+}
+
+.su-wrapper .su-cards .su-card .su-card-text p {
+    font-size: 18px;
+}
+
+.su-wrapper .su-cards .su-card .su-card-number {
+    padding: 0.15em 0px 1em 0px;
+}
+
+.su-wrapper .su-cards .su-card .su-card-number h1 {
+    font-weight: 500;
+    font-size: 44px;
+}
+
+.su-wrapper .su-table-wrapper {
+    position: relative;
+    max-width: 100%;
+    height: 550px;
+    margin-top: 20px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+    padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.su-wrapper .su-table-wrapper .su-table-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    max-width: 100%;
+    background: var(--primary);
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.su-wrapper .su-table-wrapper .su-table-header .showQty {
+    display: inline-flex;
+    flex-direction: row;
+    width: 200px;
+    margin: auto;
+    color: var(--white);
+    justify-content: start;
+}
+
+.su-wrapper .su-table-wrapper .su-table-header .showQty p {
+    font-size: 18px;
+}
+
+.su-wrapper .su-table-wrapper .su-table-header .showQty select {
+    margin: 0 5px;
+    padding: 2px 5px;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.su-wrapper .su-table-wrapper .su-table-header .separator {
+    width: 30%;
+    padding: 2px;
+}
+
+.su-wrapper .su-table-wrapper .su-table-header .separator mat-progress-spinner {
+    position: absolute;
+    z-index: 1000;
+    height: 10px;
+    transform: scale(0.3) translateY(-75px);
+}
+
+.su-wrapper .su-table-wrapper .su-table-header .th-search {
+    max-width: 25%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.su-wrapper .su-table-wrapper .su-table-header .th-search i {
+    font-size: 22px;
+    margin: 5px 10px;
+    color: var(--white);
+}
+
+.su-wrapper .su-table-wrapper .su-table-header .th-search input {
+    padding: 2px 4px;
+    max-width: 85%;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+.su-wrapper .su-table-wrapper table {
+    border: none;
+    margin: 0 !important;
+    min-width: 100%;
+}
+
+.su-wrapper .su-table-wrapper table tr th {
+    height: 30px;
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 400;
+}
+
+.su-wrapper .su-table-wrapper table tr td {
+    height: 30px;
+    background: var(--white);
+    font-weight: 400;
+    padding: 0 5px;
+}
+
+.su-wrapper .su-table-wrapper table tr td.tb-actions {
+    align-items: center !important;
+    text-align: center;
+}
+
+.su-wrapper .su-table-wrapper table tr td.tb-actions button {
+    height: 24px;
+    width: 24px;
+    margin: 0 2px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.su-wrapper .su-table-wrapper table tr td.tb-actions button.edit {
+    background: var(--primary);
+}
+
+.su-wrapper .su-table-wrapper table tr td.tb-actions button.delete {
+    background: red;
+}
+
+.su-wrapper .su-table-wrapper table tr td.tb-actions button.edit:hover {
+    background: var(--white);
+    border: 1px solid var(--primary) !important;
+    transform: scale(1.05);
+    transition: 0.25s;
+}
+
+.su-wrapper .su-table-wrapper table tr td.tb-actions button.delete:hover {
+    background: var(--white);
+    border: 1px solid red !important;
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.su-wrapper .su-table-wrapper table tr td.tb-actions button.edit:hover i {
+    color: var(--primary);
+}
+
+.su-wrapper .su-table-wrapper table tr td.tb-actions button.delete:hover i {
+    color: red;
+}
+
+.su-wrapper .su-table-wrapper table tr td.tb-actions button i {
+    font-size: 16px;
+    color: var(--white);
+}

@@ -1,0 +1,42 @@
+<div class="settings-wrapper">
+    <div class="see-settings-wrapper">
+        <div class="title">
+            <h1>Ajustes de cuenta</h1>
+        </div>
+        <div class="profile-img-box">
+            <div class="img-container">
+                <img [src]="imgLink" width="120px" height="120px" alt="">
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <input type="button" value="Subir Foto" (click)="showImgInput()">
+            <input type="button" value="Editar datos" (click)="enableForm()">
+        </div>
+        <form [formGroup]="editForm">
+            <div class="form-container">
+                <div class="input-box">
+                    <label for="input-name">Nombre</label>
+                    <input type="text" id="name_" name="input-name" placeholder="{{actualName}}" formControlName="name">
+                </div>
+                <div class="input-box">
+                    <label for="input-lastname">Apellido</label>
+                    <input type="text" id="last_name_" name="input-lastname" placeholder="{{actualLastName}}" formControlName="last_name">
+                </div>
+                <div class="input-box">
+                    <label for="input-email">Email</label>
+                    <input type="text" id="email_" name="input-email" placeholder="{{actualEmail}}" formControlName="email">
+                </div>
+                <div class="input-box-upload" id="input-box-upload">
+                    <label for="input-file">Subir Foto</label>
+                    <input class="file-text" type="text" id="file-text" name="input-file" placeholder="Subir archivo" (click)="enableImgUpload()" formControlName="file_text">
+                    <input id="file" type="file" style='visibility: hidden;' name="img" (change)="changeText($event)" formControlName="file" />
+                </div>
+
+            </div>
+        </form>
+        <div class="form-btns-container">
+            <input type="button" id="smt-btn" (click)="submitChanges()" value="Guardar Cambios">
+        </div>
+    </div>
+</div>
