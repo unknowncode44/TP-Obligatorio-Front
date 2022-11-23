@@ -55,6 +55,23 @@ export class AuthService {
     return this.http.delete<User>(url)
   }
 
+  async updateUser(userID: string, user: {}) : Promise<Observable<User>> {
+    const url = `http://localhost:3000/api/accounts/${userID}`
+    return this.http.put<User>(url, user, this.httpOptions)
+  }
+
+  async uploadPicture(userID: string, file: File) : Promise<Observable<any>>{
+    const url = `http://localhost:3000/api/uploads/${userID}`
+    const formData = new FormData()
+    formData.append('file', file, file.name)
+    return this.http.post<any>(url, formData)
+  }
+
+  async getPicture(userID: string): Promise<Observable<any>>{
+    const url = `http://localhost:3000/api/uploads/users/${userID}`
+    return this.http.get<any>(url, {responseType: 'blob' as 'json'})
+  }
+
 
   // loading spinner durante los estados de carga
   

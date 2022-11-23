@@ -6,7 +6,7 @@
     width: 450px;
     justify-content: center;
     align-items: center;
-    padding: 5px 15px;
+    padding: 0px 15px;
 }
 
 .settings-wrapper .see-settings-wrapper {
@@ -19,7 +19,7 @@
 .see-settings-wrapper .title {
     display: flex;
     min-width: 100%;
-    min-height: 60px;
+    min-height: 40px;
     padding-left: 20px;
     align-items: center;
     text-align: center;
@@ -28,7 +28,7 @@
 .see-settings-wrapper .title h1 {
     width: 100%;
     font-weight: 300;
-    font-size: 32px;
+    font-size: 28px;
     color: #fff;
 }
 
@@ -37,13 +37,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    max-height: 155px;
+    max-height: 125px;
     max-width: 100%;
 }
 
 .see-settings-wrapper .profile-img-box .img-container {
-    max-height: 150px;
-    width: 150px;
     position: relative;
     display: flex;
     align-items: center;
@@ -51,8 +49,8 @@
 }
 
 .see-settings-wrapper .profile-img-box .img-container img {
-    max-height: 150px;
-    width: 150px;
+    max-height: 120px;
+    width: 120px;
     border-radius: 50%;
     border: 2px solid rgba(255, 255, 255, .5);
 }
@@ -60,7 +58,7 @@
 .see-settings-wrapper .btn-container {
     min-width: 100%;
     max-width: 100%;
-    height: 80px;
+    height: 60px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -70,11 +68,11 @@
 .see-settings-wrapper .btn-container input {
     background: var(--white);
     color: var(--primary);
-    height: 40px;
+    height: 30px;
     width: 150px;
     border-radius: 15px;
     border: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 200;
 }
 
@@ -90,9 +88,102 @@
 
 .see-settings-wrapper .form-container {
     background: var(--white);
-    height: 400px;
+    height: 370px;
     max-width: calc(100% - 0px);
     margin: 0px 2px;
-    padding: 0px;
+    padding: 10px 20px;
     border-radius: 15px 15px 0px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.see-settings-wrapper .form-container .input-box {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-height: 60px;
+    padding: 5px 15px;
+    margin-bottom: 5px;
+}
+
+.see-settings-wrapper .form-container .input-box-upload {
+    display: none;
+    transition: 0.5s linear ease;
+}
+
+.see-settings-wrapper .form-container .input-box-upload.active {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-height: 60px;
+    padding: 5px 15px;
+    margin-bottom: 5px;
+    transition: 0.5s linear ease-in;
+}
+
+.see-settings-wrapper .form-container .input-box-upload.active label {
+    font-size: 16px;
+    color: var(--primary);
+    font-weight: 200;
+}
+
+.see-settings-wrapper .form-container .input-box-upload.active input.file-text {
+    min-width: 100%;
+    padding: 8px 8px;
+    border: none;
+    border-bottom: 1px solid var(--primary);
+    font-size: 20px;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.see-settings-wrapper .form-container .input-box label {
+    font-size: 16px;
+    color: var(--primary);
+    font-weight: 200;
+}
+
+.see-settings-wrapper .form-container .input-box input {
+    min-width: 100%;
+    padding: 8px 8px;
+    border: none;
+    border-bottom: 1px solid var(--primary);
+    font-size: 20px;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.see-settings-wrapper .form-container .input-box input.active {
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+}
+
+.see-settings-wrapper .form-btns-container {
+    height: 80px;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.see-settings-wrapper .form-btns-container input {
+    background: var(--white);
+    color: var(--primary);
+    height: 40px;
+    width: 150px;
+    border-radius: 15px;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.see-settings-wrapper .form-btns-container input:hover {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    transform: scale(1.05);
+    border: 1px solid var(--white);
 }

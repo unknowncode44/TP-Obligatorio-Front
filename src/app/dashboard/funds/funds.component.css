@@ -312,12 +312,37 @@
 }
 
 .see-transactions-wrapper .su-table-wrapper .su-table-header .separator {
-    width: 50%;
+    width: 30%;
     padding: 2px;
     display: flex;
     flex-direction: row;
     align-content: end;
     justify-content: end;
+}
+
+.see-transactions-wrapper .su-table-wrapper .su-table-header .download-pdf-container {
+    width: 60px;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.see-transactions-wrapper .su-table-wrapper .su-table-header .download-pdf-container a {
+    color: var(--white);
+    display: block;
+    text-align: center;
+    font-size: 28px;
+}
+
+.see-transactions-wrapper .su-table-wrapper .su-table-header .download-pdf-container p {
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 200;
+    display: block;
+    text-align: center;
 }
 
 .see-transactions-wrapper .su-table-wrapper .su-table-header .separator mat-progress-spinner {
@@ -368,6 +393,34 @@
     background: var(--white);
     font-weight: 400;
     padding: 0 5px;
+}
+
+.table-wr .img-wrapp-pdf {
+    display: none;
+}
+
+.table-wr .img-wrapp-pdf.active {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-height: 60px;
+    min-width: 100%;
+    background: var(--primary);
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+.table-wr .img-wrapp-pdf.active h1 {
+    font-weight: 400;
+    width: 60%;
+    text-align: center;
+    color: var(--white);
+}
+
+.see-transactions-wrapper .su-table-wrapper table tr td:nth-child(5),
+.see-transactions-wrapper .su-table-wrapper table tr td:nth-child(2) {
+    text-align: end;
 }
 
 .see-transactions-wrapper .su-table-wrapper table tr td.tb-actions {

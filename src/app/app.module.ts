@@ -24,6 +24,10 @@ import {ToastModule} from 'primeng/toast';
 import {RippleModule} from 'primeng/ripple';
 import { BottombarComponent } from './dashboard/sidebar/bottombar/bottombar.component';
 import { SettingsComponent } from './dashboard/settings/settings.component';
+import { FileSaverModule} from 'ngx-filesaver'
+import {DialogModule} from 'primeng/dialog';
+import { FileUploadModule } from 'ng2-file-upload';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +44,7 @@ import { SettingsComponent } from './dashboard/settings/settings.component';
     BottombarComponent,
     SettingsComponent,
     
+    
   ],
   
   imports: [
@@ -55,7 +60,11 @@ import { SettingsComponent } from './dashboard/settings/settings.component';
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     RippleModule,
-    ToastModule
+    ToastModule,
+    FileSaverModule,
+    DialogModule,
+    FileUploadModule
+   
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

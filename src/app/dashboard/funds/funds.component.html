@@ -21,7 +21,7 @@
             <div class="field">
                 <form [formGroup]="transactionForm" (ngSubmit)="createTransaction()">
                     <label for="source">Desde Cuenta</label>
-                    <input name="source" type="number" formControlName="source_">
+                    <input name="source" type="number" formControlName="source_" value="{{myId}}" placeholder="Mi cuenta: {{myId}}">
                     <label for="destiny">A Cuenta</label>
                     <input name="destiny" type="numner" formControlName="destiny">
                     <label for="amount">Monto</label>
@@ -70,13 +70,27 @@
                 <div class="separator">
                     <mat-progress-spinner [mode]="'indeterminate'" *ngIf="loading$ | async"></mat-progress-spinner>
                 </div>
+                <div class="download-pdf-container" (click)="openPDF()">
+                    <a><span class="icon ion ion-md-document"></span></a>
+                    <p>PDF</p>
+                </div>
+                <div class="download-pdf-container" (click)="openXLS()">
+                    <a><span class="icon ion ion-md-document"></span></a>
+                    <p>XLS</p>
+                </div>
 
             </div>
-            <div class="table-wr">
-                <table>
+            <div class="table-wr" id="htmlData">
+                <div class="img-wrapp-pdf" id="headerData">
+                    <h1>Mis transacciones</h1>
+                </div>
+                <div class="header-separator">
+
+                </div>
+                <table id="trans-table">
                     <tr>
                         <th>Fecha</th>
-                        <th>ID Transaccion</th>
+                        <th>ID</th>
                         <th>Origen</th>
                         <th>Destino</th>
                         <th>Monto</th>
@@ -87,7 +101,7 @@
                         <td>{{ trans.id_transaction }}</td>
                         <td>{{ trans.source_ }}</td>
                         <td>{{ trans.destiny }}</td>
-                        <td> {{ trans.quantity }}</td>
+                        <td>${{ trans.quantity }}</td>
                     </tr>
                 </table>
             </div>
